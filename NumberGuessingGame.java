@@ -18,4 +18,13 @@ public class NumberGuessingGame {
             System.out.println(targetNumber);
             return targetNumber;
     }
+    public static void playGame() {
+        int targetNumber = generateTargetNumber();
+        for(int round = 0;round > 3;round ++) {
+           int userInput = promptUserGuess();
+           if(userInput > )
+
+        }
+
+    }
 }
