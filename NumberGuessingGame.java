@@ -15,8 +15,6 @@ public class NumberGuessingGame {
         // Returns a random number from 1 to 100
     public static int generateTargetNumber() {
             int targetNumber = (int)(Math.random() * 101);
-            // test only
-            System.out.println(targetNumber);
             return targetNumber;
     }
     public static void playGame() {
@@ -29,9 +27,13 @@ public class NumberGuessingGame {
                 System.out.println("The number is higher");
            } else if(userInput == targetNumber) {
                System.out.println("Congratulations you won");
+               System.out.println("It took you " + (round + 1) + " guesses to get the right number");
                break;
            }
-
+            if(round == 9) {
+                System.out.println("You Lose");
+                break;
+            }
            }
 
 
