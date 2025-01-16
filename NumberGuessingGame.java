@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class NumberGuessingGame {
     public static void main(String[] args) {
-        generateTargetNumber();
-        promptUserGuess();
+        playGame();
+
     }
 
     // lets the player choose his guessed number
@@ -15,16 +15,26 @@ public class NumberGuessingGame {
         // Returns a random number from 1 to 100
     public static int generateTargetNumber() {
             int targetNumber = (int)(Math.random() * 101);
+            // test only
             System.out.println(targetNumber);
             return targetNumber;
     }
     public static void playGame() {
         int targetNumber = generateTargetNumber();
-        for(int round = 0;round > 3;round ++) {
+        for(int round = 0;round < 10;round ++) {
            int userInput = promptUserGuess();
-           if(userInput > )
+           if(userInput > targetNumber) {
+               System.out.println("The number is smaller");
+           } else if(userInput < targetNumber) {
+                System.out.println("The number is higher");
+           } else if(userInput == targetNumber) {
+               System.out.println("Congratulations you won");
+               break;
+           }
+
+           }
+
 
         }
 
     }
-}
