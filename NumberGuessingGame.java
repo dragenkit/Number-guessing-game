@@ -17,6 +17,7 @@ public class NumberGuessingGame {
             int targetNumber = (int)(Math.random() * 101);
             return targetNumber;
     }
+
     public static void playGame() {
         int targetNumber = generateTargetNumber();
         for(int round = 0;round < 10;round ++) {
@@ -32,11 +33,26 @@ public class NumberGuessingGame {
            }
             if(round == 9) {
                 System.out.println("You Lose");
+                System.out.println("The number was" + targetNumber);
                 break;
             }
            }
+            playAgain();
 
-
+        }
+            // ask the player if they want to play again.
+        public static void playAgain() {
+            Scanner playAgain = new Scanner(System.in);
+            System.out.println("Do you want to play again yes/no?");
+            String userAnswer = playAgain.nextLine();
+            if("yes".equals(userAnswer)) {
+                playGame();
+            } else if(userAnswer.equals(userAnswer)){
+                return;
+            } else {
+                System.out.println("Please answer yes or no.");
+                playAgain();
+            }
         }
 
     }
