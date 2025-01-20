@@ -14,7 +14,7 @@ public class NumberGuessingGame {
     }
         // Returns a random number from 1 to 100
     public static int generateTargetNumber() {
-            int targetNumber = (int)(Math.random() * 101);
+            int targetNumber = (int)(Math.random() * (101 * promptUserDifficulty()));
             return targetNumber;
     }
 
@@ -53,6 +53,13 @@ public class NumberGuessingGame {
                 System.out.println("Please answer yes or no.");
                 playAgain();
             }
+        }
+
+        public static int promptUserDifficulty() {
+            Scanner chosenDifficulty = new Scanner(System.in);
+            System.out.println("Choose your difficulty(1:standard):");
+            int difficulty = chosenDifficulty.nextInt();
+            return difficulty;
         }
 
     }
