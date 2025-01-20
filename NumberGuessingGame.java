@@ -33,7 +33,7 @@ public class NumberGuessingGame {
            }
             if(round == 9) {
                 System.out.println("You Lose");
-                System.out.println("The number was" + targetNumber);
+                System.out.println("The number was " + targetNumber);
                 break;
             }
            }
@@ -47,7 +47,7 @@ public class NumberGuessingGame {
             String userAnswer = playAgain.nextLine();
             if("yes".equals(userAnswer)) {
                 playGame();
-            } else if(userAnswer.equals(userAnswer)){
+            } else if("no".equals(userAnswer)){
                 return;
             } else {
                 System.out.println("Please answer yes or no.");
