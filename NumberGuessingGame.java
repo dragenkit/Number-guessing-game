@@ -20,7 +20,7 @@ public class NumberGuessingGame {
 
     public static void playGame() {
         int targetNumber = generateTargetNumber();
-        for(int round = 0;round < 10;round ++) {
+        for(int round = 0;round < 15;round ++) {
            int userInput = promptUserGuess();
            if(userInput > targetNumber) {
                System.out.println("The number is smaller");
@@ -31,7 +31,7 @@ public class NumberGuessingGame {
                System.out.println("It took you " + (round + 1) + " guesses to get the right number");
                break;
            }
-            if(round == 9) {
+            if(round == 14) {
                 System.out.println("You Lose");
                 System.out.println("The number was " + targetNumber);
                 break;
@@ -57,7 +57,7 @@ public class NumberGuessingGame {
 
         public static int promptUserDifficulty() {
             Scanner chosenDifficulty = new Scanner(System.in);
-            System.out.println("Choose your difficulty(1:standard):");
+            System.out.println("Choose your difficulty(choose 1 for the standard difficulty):");
             int difficulty = chosenDifficulty.nextInt();
             return difficulty;
         }
