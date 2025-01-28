@@ -45,9 +45,9 @@ public class NumberGuessingGame {
             Scanner playAgain = new Scanner(System.in);
             System.out.println("Do you want to play again yes/no?");
             String userAnswer = playAgain.nextLine();
-            if("yes".equals(userAnswer)) {
+            if("yes".equals(userAnswer.trim())) {
                 playGame();
-            } else if("no".equals(userAnswer)){
+            } else if("no".equals(userAnswer.trim())){
                 return;
             } else {
                 System.out.println("Please answer yes or no.");
