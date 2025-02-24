@@ -1,8 +1,14 @@
 import java.util.Scanner;
 public class NumberGuessingGame {
-    public static void main(String[] args) {
-        playGame();
 
+    int playerScore;
+
+    public static void main(String[] args) {
+        NumberGuessingGame numberGuessingGame = new NumberGuessingGame();
+    }
+
+    NumberGuessingGame() {
+        playGame();
     }
 
     // lets the player choose his guessed number
