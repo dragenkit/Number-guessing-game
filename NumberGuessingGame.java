@@ -1,13 +1,14 @@
 import java.util.Scanner;
 public class NumberGuessingGame {
 
-    int playerScore;
+    static int playerScore;
 
     public static void main(String[] args) {
         NumberGuessingGame numberGuessingGame = new NumberGuessingGame();
     }
 
-    NumberGuessingGame() {
+    NumberGuessingGame()
+    {   playerScore = 0;
         playGame();
     }
 
@@ -35,11 +36,14 @@ public class NumberGuessingGame {
            } else if(userInput == targetNumber) {
                System.out.println("Congratulations you won");
                System.out.println("It took you " + (round + 1) + " guesses to get the right number");
+               playerScore++;
+               System.out.println("Your current Score is: " + playerScore);
                break;
            }
             if(round == 14) {
                 System.out.println("You Lose");
                 System.out.println("The number was " + targetNumber);
+                System.out.println("Your current Score is: " + playerScore);
                 break;
             }
            }
