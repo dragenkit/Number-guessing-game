@@ -19,12 +19,12 @@ public class NumberGuessingGame {
         int guessedNumber = userGuess.nextInt();
         return guessedNumber;
     }
-        // Returns a random number from 1 to 100
+        // Returns a random number from 1 to 100 multiply with the difficulty
     public static int generateTargetNumber() {
             int targetNumber = (int)(Math.random() * (101 * promptUserDifficulty()));
             return targetNumber;
     }
-
+    // plays a round of the game
     public static void playGame() {
         int targetNumber = generateTargetNumber();
         for(int round = 0;round < 15;round ++) {
@@ -50,7 +50,7 @@ public class NumberGuessingGame {
             playAgain();
 
         }
-            // ask the player if they want to play again.
+        // ask the player if they want to play again.
         public static void playAgain() {
             Scanner playAgain = new Scanner(System.in);
             System.out.println("Do you want to play again yes/no?");
@@ -64,7 +64,7 @@ public class NumberGuessingGame {
                 playAgain();
             }
         }
-
+        // Ask the player for the preferred difficulty
         public static int promptUserDifficulty() {
             Scanner chosenDifficulty = new Scanner(System.in);
             System.out.println("Choose your difficulty(choose 1 for the standard difficulty):");
