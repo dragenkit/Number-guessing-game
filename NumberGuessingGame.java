@@ -17,6 +17,10 @@ public class NumberGuessingGame {
         Scanner userGuess = new Scanner(System.in);
         System.out.println("Guess the Number:");
         int guessedNumber = userGuess.nextInt();
+        if(guessedNumber < 0) {
+            System.out.println("The Number has to be positive");
+            promptUserGuess();
+        }
         return guessedNumber;
     }
         // Returns a random number from 1 to 100 multiply with the difficulty
