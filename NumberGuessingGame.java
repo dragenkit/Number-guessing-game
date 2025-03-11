@@ -37,22 +37,20 @@ public class NumberGuessingGame {
 
                System.out.println("The number is smaller");
 
-               if(userInput < targetNumber + 20) {
+               if(userInput < targetNumber + 10){
+                   System.out.println("and you are close!");
+               }else if(userInput < targetNumber + 20) {
                    System.out.println("you are warm");
-                   if(userInput < targetNumber + 10){
-                       System.out.println(" and you are close!");
-                   }
                }
 
            } else if(userInput < targetNumber) {
 
                 System.out.println("The number is higher");
 
-               if(userInput > targetNumber + 20){
+               if(userInput > targetNumber - 10) {
+                   System.out.println("and you are close!");
+               }else if(userInput > targetNumber - 20){
                    System.out.println(" you are warm!");
-                   if(userInput > targetNumber - 10) {
-                       System.out.println(" and you are close!");
-                   }
                }
 
 
