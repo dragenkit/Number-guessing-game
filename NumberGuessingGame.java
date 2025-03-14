@@ -7,8 +7,8 @@ public class NumberGuessingGame {
         NumberGuessingGame numberGuessingGame = new NumberGuessingGame();
     }
 
-    NumberGuessingGame()
-    {   playerScore = 0;
+    NumberGuessingGame() {
+        playerScore = 0;
         playGame();
     }
 
