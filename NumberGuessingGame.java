@@ -95,7 +95,12 @@ public class NumberGuessingGame {
             Scanner chosenDifficulty = new Scanner(System.in);
             System.out.println("Choose your difficulty(choose 1 for the standard difficulty):");
             int difficulty = chosenDifficulty.nextInt();
-            System.out.println("the number is between 0 and " + difficulty * 101);
+            if(0 > difficulty) {
+                System.out.println("please use a positive number");
+                promptUserDifficulty();
+            } else {
+                System.out.println("the number is between 0 and " + difficulty * 101);
+            }
             int maxGuess = difficulty * 101;
             return new ValueHolder(difficulty, maxGuess);
         }
