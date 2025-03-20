@@ -94,15 +94,20 @@ public class NumberGuessingGame {
         // Ask the player for the preferred difficulty
         public static ValueHolder promptUserDifficulty() {
             Scanner chosenDifficulty = new Scanner(System.in);
-            System.out.println("Choose your difficulty(choose 1 for the standard difficulty):");
-            int difficulty = chosenDifficulty.nextInt();
-            if(difficulty < 0) {
-                System.out.println("please use a positive number");
-                promptUserDifficulty();
-            } else {
-                System.out.println("the number is between 0 and " + difficulty * 101);
-            }
+            int difficulty;
+            do {
+                System.out.println("Choose your difficulty(choose 1 for the standard difficulty):");
+
+                difficulty = chosenDifficulty.nextInt();
+
+                if (difficulty < 0) {
+                    System.out.println("please use a positive number");
+                }
+
+            } while (difficulty < 0);
+
             int maxGuess = difficulty * 101;
+            System.out.println("the number is between 0 and " + difficulty * 101);
             return new ValueHolder(difficulty, maxGuess);
         }
 
