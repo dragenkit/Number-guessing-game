@@ -3,7 +3,8 @@ public class NumberGuessingGame {
     static ValueHolder valueHolder;
     static int playerScore;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         NumberGuessingGame numberGuessingGame = new NumberGuessingGame();
     }
 
@@ -16,16 +17,16 @@ public class NumberGuessingGame {
     // lets the player choose his guessed number
     public static int promptUserGuess() {
         Scanner userGuess = new Scanner(System.in);
-        System.out.println("Guess the Number:");
-        int guessedNumber = userGuess.nextInt();
-        if(guessedNumber < 0) {
-            System.out.println("The number has to be in the target range");
-            promptUserGuess();
-        }
-        if(valueHolder.value2 < guessedNumber){
-            System.out.println("The number has to be in the target range");
-            promptUserGuess();
-        }
+        int guessedNumber;
+        do {
+            System.out.println("Guess the Number:");
+            guessedNumber = userGuess.nextInt();
+            if (guessedNumber < 0 || guessedNumber > valueHolder.value2) {
+                System.out.println("The number has to be in the target range");
+            }
+
+        } while (guessedNumber < 0 || guessedNumber > valueHolder.value2);
+
         return guessedNumber;
     }
         // Returns a random number from 1 to 100 multiply with the difficulty
@@ -95,7 +96,7 @@ public class NumberGuessingGame {
             Scanner chosenDifficulty = new Scanner(System.in);
             System.out.println("Choose your difficulty(choose 1 for the standard difficulty):");
             int difficulty = chosenDifficulty.nextInt();
-            if(0 > difficulty) {
+            if(difficulty < 0) {
                 System.out.println("please use a positive number");
                 promptUserDifficulty();
             } else {
